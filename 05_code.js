@@ -28,3 +28,30 @@ console.log(countNumber([[[[[2, 14, "nepal"]]], 2, 3, 4]]), 5);
 console.log(countNumber([0, [12, "biratnagar", [[2]]]]), 3);
 console.log(countNumber([["balkot"]]), 0);
 console.log(countNumber([1, 2, 3, 4, 5, 6]), 6);
+
+/**
+ firstNVowels("sharpening skills", 3) ➞ "aei"
+
+firstNVowels("major league", 5) ➞ "aoeau"
+
+firstNVowels("hostess", 5) ➞ "invalid"
+ */
+
+const firstNVowels = (sent, n) => {
+ 
+  let vowels = sent.match(/[aeiou]/gi) || [];
+ 
+  if (vowels.length < n) {
+    return "invlaid";
+  } 
+  else {
+    return vowels.slice(0, n).join("");
+  }
+};
+
+console.log(firstNVowels("sharpening skills", 3), "aei");
+console.log(firstNVowels("major league", 5), "aoeau");
+console.log(firstNVowels("crabby patty", 2), "aa");
+console.log(firstNVowels("shrimp", 1), "i");
+console.log(firstNVowels("shrimpy", 2), "invalid");
+console.log(firstNVowels("hostess", 5), "invalid");
