@@ -50,3 +50,36 @@ console.log(names.match(re));
 // let re = /^\s/g;
 
 // console.log(re.test(names));
+
+/**
+ Write a function that takes a string and 
+ calculates the number of letters and digits within it.
+Return the result as an object.
+
+Examples
+
+countAll("Hello World") ➞ { "LETTERS":  10, "DIGITS": 0 }
+
+countAll("H3ll0 Wor1d") ➞ { "LETTERS":  7, "DIGITS": 3 }
+
+countAll("149990") ➞ { "LETTERS": 0, "DIGITS": 6 }
+ */
+
+function countAll(str) {
+  let DIGITS = str.match(/\d/g)?.length || 0;
+  
+  let LETTERS = str.match(/[a-z]/gi)?.length || 0;
+
+  return { LETTERS, DIGITS };
+}
+
+console.log(countAll("Hello"), { LETTERS: 5, DIGITS: 0 });
+console.log(countAll("137"), { LETTERS: 0, DIGITS: 3 });
+console.log(countAll("H3LL0"), { LETTERS: 3, DIGITS: 2 });
+console.log(countAll("149990"), { LETTERS: 0, DIGITS: 6 });
+console.log(
+  countAll("edabit 2018"),
+  { LETTERS: 6, DIGITS: 4 },
+  "Spaces are not letters."
+);
+console.log(countAll("    "), { LETTERS: 0, DIGITS: 0 });
