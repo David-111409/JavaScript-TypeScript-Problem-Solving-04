@@ -29,3 +29,36 @@ console.log(negativeSum("33%14&-1 12 a 21 -2 b c"), -3);
 console.log(negativeSum("22 13%14&-11-22 13 12"), -33);
 
 console.log(negativeSum("-12 -8"), -20);
+
+
+/*
+Create a function that counts the number of blocks of two or more adjacent 1s in an array.
+
+Examples
+
+countOnes([1, 0, 0, 1, 1, 0, 1, 1, 1]) ➞ 2
+// Two instances: [1, 1] (middle) and [1, 1, 1] (end)
+
+countOnes([1, 0, 1, 0, 1, 0, 1, 0]) ➞ 0
+
+countOnes([1, 1, 1, 1, 0, 0, 0, 0]) ➞ 1
+
+countOnes([0, 0, 0]) ➞ 0
+*/
+const countOnes = (ar) => {
+  let ones = ar.join("").match(/1{2,}/g) || [];
+  return ones.length;
+};
+
+console.log(countOnes([1, 1, 1, 1, 1]), 1);
+console.log(countOnes([1, 1, 1, 1, 0]), 1);
+console.log(countOnes([0, 0, 0, 0, 0]), 0);
+console.log(countOnes([1, 0, 0, 0, 0]), 0);
+console.log(countOnes([1, 0, 1, 0, 1]), 0);
+console.log(countOnes([1, 0, 0, 0, 1, 0, 0, 1, 1]), 1);
+console.log(countOnes([1, 1, 0, 1, 1, 0, 0, 1, 1]), 3);
+console.log(countOnes([1, 0, 0, 1, 1, 0, 0, 1, 1]), 2);
+console.log(countOnes([1, 0, 0, 1, 1, 0, 1, 1, 1]), 2);
+console.log(countOnes([1, 0, 1, 0, 1, 0, 1, 0]), 0);
+console.log(countOnes([1, 1, 1, 1, 0, 0, 0, 0]), 1);
+console.log(countOnes([1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1]), 3);
