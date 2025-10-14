@@ -53,3 +53,25 @@ console.log(
 console.log(userOne.constructor === User);
 console.log(userTwo.constructor === User);
 console.log(userThree.constructor === User);
+
+class User {
+    constructor(id, name, salary) {
+        this.i = id;
+        this.n = name || "Unknown";
+        this.s = salary < 6000 ? salary + 1000 : salary;
+        this.msg = function () {
+            return `Hello, ${this.n}. The salary is ${this.s}.`;
+        };
+    }
+    hello() {
+        return `Hello Method, ${this.n}`;
+    }
+}
+
+let userOne = new User(100, "Hager", 6000);
+
+console.log(userOne.i);
+console.log(userOne.n);
+console.log(userOne.s);
+console.log(userOne.msg());
+console.log(userOne.hello());
