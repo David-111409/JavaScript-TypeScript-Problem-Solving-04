@@ -50,3 +50,8 @@ var data = function () {
 };
 
 // console.log(data()); // "1"
+{
+let x = 10;
+x++;
+console.log(x++, ++x); // 11 , 13
+}
