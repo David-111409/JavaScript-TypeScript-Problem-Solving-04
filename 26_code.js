@@ -26,3 +26,10 @@ console.log(x, y);
 
 let str = "abc" + +"def"; // abcNaN
 console.log(str);
+
+{
+  let num = 0;
+  console.log(num++); // 0
+  console.log(++num); // 2
+  console.log(num); // 2
+}
