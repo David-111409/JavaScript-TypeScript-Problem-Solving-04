@@ -36,3 +36,49 @@ console.log(
 console.log(
   absolute("A man with no haters.") === "An absolute man with no haters."
 );
+
+/*
+Create a function to extract the name of the subreddit from its URL.
+
+Examples
+
+subReddit("https://www.reddit.com/r/funny/") ➞ "funny"
+
+subReddit("https://www.reddit.com/r/relationships/") ➞ "relationships"
+
+subReddit("https://www.reddit.com/r/mildlyinteresting/") ➞ "mildlyinteresting"
+*/
+
+const subReddit = (url) => url.match(/(?<=\/r\/)\w+(?=\/$)/i)[0];
+
+console.log(subReddit("https://www.reddit.com/r/funny/"));
+console.log(
+  subReddit("https://www.reddit.com/r/relationships/"),
+  "relationships"
+);
+console.log(
+  subReddit("https://www.reddit.com/r/mildlyinteresting/"),
+  "mildlyinteresting"
+);
+console.log(subReddit("https://www.reddit.com/r/funny/"), "funny");
+console.log(
+  subReddit("https://www.reddit.com/r/CrappyDesign/"),
+  "CrappyDesign"
+);
+console.log(subReddit("https://www.reddit.com/r/confession/"), "confession");
+console.log(subReddit("https://www.reddit.com/r/AskMen/"), "AskMen");
+console.log(subReddit("https://www.reddit.com/r/comics/"), "comics");
+console.log(subReddit("https://www.reddit.com/r/lifehacks/"), "lifehacks");
+console.log(
+  subReddit("https://www.reddit.com/r/wholesomememes/"),
+  "wholesomememes"
+);
+console.log(
+  subReddit("https://www.reddit.com/r/iamverysmart/"),
+  "iamverysmart"
+);
+console.log(
+  subReddit("https://www.reddit.com/r/starterpacks/"),
+  "starterpacks"
+);
+console.log(subReddit("https://www.reddit.com/r/awww/"), "awww");
