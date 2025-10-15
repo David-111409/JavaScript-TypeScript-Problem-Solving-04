@@ -61,3 +61,7 @@ console.log(+[]); // 0
 console.log(+[123]); // 123
 console.log(+[1, 2, 3]); // NaN
 console.log(+function(){}); // NaN
+
+const [x, y = 5] = [10];
+console.log(x); // 10
+console.log(x + y); // 15
