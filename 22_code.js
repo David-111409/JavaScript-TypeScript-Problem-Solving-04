@@ -29,3 +29,16 @@ console.log(one.constructor === two.constructor); // Number === Number
 
 console.log(one instanceof Number, two instanceof Number); // fales, true
 console.log(typeof one, typeof two); // number, object
+
+let n = 200;
+let m = new Number(200);
+
+console.log(n.constructor); // number
+console.log(m.constructor); // number
+console.log(n.constructor === m.constructor);
+
+console.log(typeof n); // number
+console.log(typeof m); // object
+
+console.log(n instanceof Number); // false
+console.log(m instanceof Number); // true
