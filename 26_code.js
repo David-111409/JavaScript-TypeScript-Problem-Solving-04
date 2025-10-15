@@ -55,3 +55,9 @@ let x = 10;
 x++;
 console.log(x++, ++x); // 11 , 13
 }
+
+{
+  const ar = [1, 2, 3];
+  ar[3] = 6;
+  console.log(ar.length); // 4
+}
