@@ -8,3 +8,11 @@ let y = [2];
 
 console.log(x + y, typeof (x + y)); //"12", string
 console.log(+x + +y, typeof (+x + +y)); //3, number
+
+{
+const x = [1, 2];
+const y = "1,2";
+
+console.log(x == y); // true
+console.log(x === y); // false
+}
