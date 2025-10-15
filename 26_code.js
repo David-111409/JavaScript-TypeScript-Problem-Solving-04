@@ -39,3 +39,14 @@ console.log(1 || 2); // 1
 console.log(0 && 1); // 0
 console.log(1 && 2); // 2
 console.log(5 || 1); // 5
+
+console.log(data()); // error with var, and '1' with regular function
+
+// function data() {
+//   return "1";
+// }
+var data = function () {
+  return "1";
+};
+
+// console.log(data()); // "1"
