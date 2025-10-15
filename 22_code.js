@@ -42,3 +42,15 @@ console.log(typeof m); // object
 
 console.log(n instanceof Number); // false
 console.log(m instanceof Number); // true
+
+// class User {
+//   static count = 0;
+//   constructor(id, name, salary) {
+//     this.i = id;
+//     this.n = name;
+//     this.s = salary;
+//     User.count++;
+//   }
+// }
+// let one = new User(2, "Hager", 2000);
+// console.log(User.count);
