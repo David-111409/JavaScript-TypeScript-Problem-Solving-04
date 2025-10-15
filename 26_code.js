@@ -16,3 +16,13 @@ const y = "1,2";
 console.log(x == y); // true
 console.log(x === y); // false
 }
+
+{ 
+const numbers = [1, 2, 3, 4, 5];
+const [x, ...y] = numbers; // 1 [2, 3, 4, 5]
+
+console.log(x, y);
+}
+
+let str = "abc" + +"def"; // abcNaN
+console.log(str);
