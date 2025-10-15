@@ -65,3 +65,18 @@ console.log(+function(){}); // NaN
 const [x, y = 5] = [10];
 console.log(x); // 10
 console.log(x + y); // 15
+
+console.log(+null === 0);
+let obj = { age: 18 };
+let { age: userAge } = obj;
+console.log(userAge);
+// console.log(age); // error
+
+console.log(1 + "3" + 4);
+
+{
+  let x = 1;
+  let y = 2;
+  console.log(x++ + ++y); // 4
+  console.log(x, y); // 2 3
+}
