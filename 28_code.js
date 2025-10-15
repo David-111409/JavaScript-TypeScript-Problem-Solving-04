@@ -80,3 +80,11 @@ console.log(1 + "3" + 4);
   console.log(x++ + ++y); // 4
   console.log(x, y); // 2 3
 }
+
+console.log([1, 2] + [3, 4]); // 1,23,4
+console.log([1, 2] + ![]); // 1,2false
+
+{
+  let x = [] + null; // "null"
+  console.log(x, typeof x, String(null));
+}
