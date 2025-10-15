@@ -49,3 +49,7 @@ console.log([2, 4] * [1, 0]); // NaN
 console.log([2] * [4]); // 2 * 4 = 8
 
 console.log([2] * [4, 1]); // NaN
+
+console.log([] + []); // output: empty string ""
+console.log([1] + []); // output: "1"
+console.log([1] + "abc"); // output: "1abc"
