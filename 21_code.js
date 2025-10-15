@@ -25,3 +25,31 @@ function solution(...ar) {
 }
 
 console.log(solution(1, 2, 3, 1));
+
+/*
+"#FF9933" --> {r: 255, g: 153, b: 51}
+*/
+
+function hexStringToRGB(hexString) {
+  hexString = hexString.slice(1).toLowerCase();
+  let obj = { a: 10, b: 11, c: 12, d: 13, e: 14, f: 15 };
+  let ar = [];
+  
+  for (let i = 0; i < 6; i += 2) {
+    ar.push(
+      16 *
+        (Number.isInteger(+hexString[i]) ? +hexString[i] : obj[hexString[i]]) +
+        (Number.isInteger(+hexString[i + 1])
+          ? +hexString[i + 1]
+          : obj[hexString[i + 1]])
+    );
+  }
+  const [r, g, b] = ar;
+
+  return { r, g, b };
+}
+
+console.log(hexStringToRGB("#1A2B3C"));
+console.log(hexStringToRGB("#ff9933"));
+console.log(hexStringToRGB("#FF9933"));
+console.log(hexStringToRGB("#000000"));
