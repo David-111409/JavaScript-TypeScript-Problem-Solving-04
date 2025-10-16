@@ -24,3 +24,10 @@ for (let i = 0; i < ar.length; i++) {
     [100]
   );
 }
+
+let x = "10";
+x++;
+console.log(x); // 11
+
+const y = "20";
+console.log(y++); // error
