@@ -32,3 +32,26 @@ console.log(length);
   b.push(3);
   console.log(a); // [1, 2, 3]
 }
+
+{
+const ar = [];
+ar.push(1);
+ar.push(2);
+console.log(ar); // [1, 2]
+ar = [3, 4];
+console.log(ar); // error: Assignment to constant variable.
+}
+
+{
+  let a = true;
+  let b = true;
+  let c = false;
+  console.log((a && b) || c); // true
+}
+
+{
+  let x = 10 + 20 * 3;
+  console.log(x); // 70
+  x = (10 + 20) * 3;
+  console.log(x); // 90
+}
