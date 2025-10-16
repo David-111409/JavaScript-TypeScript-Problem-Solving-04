@@ -16,3 +16,19 @@ console.log("foo".length); // 3
 console.log("foo"[1]); // o
 console.log("foo"[4]); // undefined
 console.log("foo".at(-1)); // 'o'
+
+let { length } = "hello";
+console.log(length);
+
+{
+  let a = [1, 2];
+  let { length: len } = a;
+  console.log(len);
+}
+
+{
+  let a = [1, 2];
+  let b = a;
+  b.push(3);
+  console.log(a); // [1, 2, 3]
+}
