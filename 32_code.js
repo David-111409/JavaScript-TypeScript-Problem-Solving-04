@@ -64,3 +64,11 @@ example1[key1] = 30;
 console.log(example1.age);
 // Output: 30
 }
+
+{
+  let ar = [1, 2, 3];
+  delete ar[1];
+  console.log(ar); // [1, <1 empty item>, 3]
+  console.log(ar.length); // 3
+  console.log(ar[1]); // undefined
+}
