@@ -55,3 +55,12 @@ console.log(ar); // error: Assignment to constant variable.
   x = (10 + 20) * 3;
   console.log(x); // 90
 }
+
+const name = "kaheld";
+age = 20;
+console.log(name, age); // kaheld 20
+
+console.log(delete name); // false
+console.log(delete age); // true
+// console.log(name); // kaheld
+// console.log(age); // ReferenceError: age is not defined
