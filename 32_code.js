@@ -51,3 +51,16 @@ console.log(value); // 3
   console.log(n); // error
 }
 
+{
+const obj = { name: "khaled" };
+let n = ["name"];
+obj[n] = "ahmed";
+console.log(obj.name);
+// Output: "ahmed"
+
+const example1 = { age: 25 };
+let key1 = ["age"];
+example1[key1] = 30;
+console.log(example1.age);
+// Output: 30
+}
