@@ -23,3 +23,31 @@ console.log(str);
 let value = "5" - 2;
 console.log(value); // 3
 }
+
+{
+  let ar = [1, 2, 2, 1, 2].push(3);
+  // ar.push(4);
+  console.log(ar); // error
+
+  // give me more examples like this
+  let arr = [5, 6, 7];
+  let newLength = arr.push(8);
+  console.log(newLength); // 4
+  console.log(arr); // [5, 6, 7, 8]
+  
+  arr.push(9, 10);
+  console.log(arr); // [5, 6, 7, 8, 9, 10]
+  
+  let emptyArr = [];
+  let len = emptyArr.push(1);
+  console.log(len); // 1
+  console.log(emptyArr); // [1]
+  emptyArr.push(2, 3, 4);
+  console.log(emptyArr); // [1, 2, 3, 4]
+
+  let r = [2, 3].push(4);
+  let n = r.push(5);
+  console.log(r); // 3
+  console.log(n); // error
+}
+
