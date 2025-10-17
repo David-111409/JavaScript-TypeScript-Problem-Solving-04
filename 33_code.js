@@ -38,3 +38,63 @@ console.log(a, b); // [1, 2, 3 ] [0, 2, 3]
   console.log(arr === str); // false
 }
 
+{
+// var x = 10;
+// {
+//   var x = 20;
+//   console.log(x); // Outputs: 20
+// }
+// console.log(x); // Outputs: 20 var is not a block scope variable
+
+console.log(x); // undefined
+var x = "hello";
+console.log(x); // hello
+
+console.log([1, 2, 3] + [1, 3, 4]); // 1,2,31,3,4
+console.log("5" + 5); // 55
+console.log("5" - 5); // 0
+console.log("5" * 5); // 25
+console.log("5" / 5); // 1
+console.log("5" - "2"); // 3
+console.log("5" * "2"); // 10
+console.log("5" / "2"); // 2.5
+console.log("5" + "2"); // 52
+console.log("5" + 2); // 52
+console.log("5" - 2); // 3
+console.log("5" * 2); // 10
+
+console.log(true + true); // 2
+console.log(true + false); // 1
+console.log(false + false); // 0
+console.log(true - false); // 1
+console.log(true * false); // 0
+console.log(true * true); // 1
+console.log(true / true); // 1
+console.log(false / true); // 0
+console.log(false / false); // NaN
+  
+console.log(1/ 0); // Infinity
+console.log(-1/ 0); // -Infinity
+console.log(0/ 0); // NaN
+console.log("hello" - "world"); // NaN
+console.log("hello" + "world"); // helloworld
+  
+console.log("hello" * "world"); // NaN
+console.log("hello" / "world"); // NaN
+console.log(null + 1); // 1
+console.log(null - 1); // -1
+console.log(null + "1"); // null1
+console.log(undefined + 1); // NaN
+console.log(undefined - 1); // NaN
+console.log(undefined + "1"); // undefined1
+console.log(NaN + 1); // NaN
+  
+console.log(NaN - 1); // NaN
+console.log(NaN + "1"); // NaN1
+console.log(NaN + NaN); // NaN
+  
+console.log(Infinity + 1); // Infinity
+console.log(Infinity - 1); // Infinity
+console.log(Infinity + "1"); // Infinity1
+console.log(Infinity + Infinity); // Infinity
+}
