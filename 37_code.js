@@ -48,3 +48,10 @@ console.log(adminOne.getSalary); // 300$
 console.log(adminOne.incrementSalaryAndGetPrivateMethod(100));
 
 console.log(userOne.incrementSalaryAndGetPrivateMethod(100));
+
+console.log(Object.getOwnPropertyNames(User.prototype));
+
+let str = "Hello World";
+// console.log(Object.getOwnPropertyNames(str.__proto__));
+// console.log(Object.getOwnPropertyNames(String.prototype));
+console.log(str.length);
