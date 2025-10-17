@@ -15,26 +15,7 @@ function longestTime(a, b, c) {
     return b;
   } else {
     return c;
-  }
-
-  /*
-  let [a, op, b] = expression.split(" ");
-  a = Number(a);
-  b = Number(b);
-  switch (op) {
-    case "+":
-      return `${expression} = ${a + b}`;
-    case "-":
-      return `${expression} = ${a - b}`;
-    case "x":
-      return `${expression} = ${a * b}`;
-    case "/":
-      return `${expression} = ${a / b}`;
-    default:
-      return "Invalid operator";
-  }
-  */
-  
+  }  
 }
 
 console.log(longestTime(1, 59, 3598), 1);
@@ -94,6 +75,24 @@ function formatMath(expression) {
     return `${expression} = ${eval(e)}`;
   }
   return `${expression} = ${eval(expression)}`;
+  
+  /*
+  let [a, op, b] = expression.split(" ");
+  a = Number(a);
+  b = Number(b);
+  switch (op) {
+    case "+":
+      return `${expression} = ${a + b}`;
+    case "-":
+      return `${expression} = ${a - b}`;
+    case "x":
+      return `${expression} = ${a * b}`;
+    case "/":
+      return `${expression} = ${a / b}`;
+    default:
+      return "Invalid operator";
+  }
+  */
 }
 
 console.log(formatMath("3 + 4") === "3 + 4 = 7");
