@@ -47,3 +47,11 @@ console.log(theGreatestNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
   let [x, ...y] = nums; // x = 1, y = [2, 3, 4 , 5]
   console.log(x, y, typeof y); // 1 [ 2, 3, 4, 5 ] object [array]
 }
+
+{
+  console.log("1" - -"1"); // 2
+  console.log("1" + +"1"); // 11
+  console.log("1" + +"1"); // 11
+  console.log("1" + - "1"); // 1-1
+  console.log("1" - +"1"); // 0
+}
