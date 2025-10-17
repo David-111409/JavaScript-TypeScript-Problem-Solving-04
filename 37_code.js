@@ -55,3 +55,18 @@ let str = "Hello World";
 // console.log(Object.getOwnPropertyNames(str.__proto__));
 // console.log(Object.getOwnPropertyNames(String.prototype));
 console.log(str.length);
+
+/*
+smashFactor(139.4, 93.8) ➞ 1.49
+
+smashFactor(181.2, 124.5) ➞ 1.46
+
+smashFactor(154.7, 104.3) ➞ 1.48 */
+
+function smashFactor(ballSpeed, clubSpeed) {
+  return parseFloat((ballSpeed / clubSpeed).toFixed(2));
+}
+
+console.log(smashFactor(139.4, 93.8), 1.49);
+console.log(smashFactor(181.2, 124.5), 1.46);
+console.log(smashFactor(154.7, 104.3), 1.48);
