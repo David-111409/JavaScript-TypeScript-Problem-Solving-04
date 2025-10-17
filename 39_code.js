@@ -17,6 +17,10 @@ isHarshad(12255) ➞ true
  */
 
 function isHarshad(num) {
+  if (!num){
+   return false;
+  }
+ 
   let sum = 0;
   let original = num;
 
