@@ -16,6 +16,25 @@ function longestTime(a, b, c) {
   } else {
     return c;
   }
+
+  /*
+  let [a, op, b] = expression.split(" ");
+  a = Number(a);
+  b = Number(b);
+  switch (op) {
+    case "+":
+      return `${expression} = ${a + b}`;
+    case "-":
+      return `${expression} = ${a - b}`;
+    case "x":
+      return `${expression} = ${a * b}`;
+    case "/":
+      return `${expression} = ${a / b}`;
+    default:
+      return "Invalid operator";
+  }
+  */
+  
 }
 
 console.log(longestTime(1, 59, 3598), 1);
