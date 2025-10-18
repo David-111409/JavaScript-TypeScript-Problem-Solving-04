@@ -21,3 +21,22 @@ console.log(+false); // 0
 
 console.log(+"hello"); // NaN
 console.log(+null); // 0
+
+var z = 1,
+  y = (z = typeof y);
+console.log(y, z); // "undefined", "undefined"
+
+let list = [1, 2, 3].push(5);
+console.log(list); // 4
+// console.log(list.push(6)); // TypeError: list.push is not a function
+
+// console.log(fun()); // error fun is not a function
+// var fun = function () {
+//   return "hello";
+// };
+
+console.log(fun()); // ouput : "hello from function declaration"
+
+function fun() {
+  return "hello from function declaration";
+}
