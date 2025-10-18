@@ -22,3 +22,38 @@ console.log(makeRug(3, 5));
 console.log(makeRug(3, 5, "$"));
 console.log(makeRug(2, 2, "A"));
 console.log(makeRug(2, 1, "bcb"), ["bcb", "bcb"]);
+
+/*
+countCharacters([
+  "###",
+  "###",
+  "###"
+]) ➞ 9
+
+countCharacters([
+  "22222222",
+  "22222222",
+]) ➞ 16
+
+countCharacters([
+  "------------------"
+]) ➞ 18
+
+countCharacters([]) ➞ 0
+
+countCharacters(["", ""]) ➞ 0
+ */
+
+function countCharacters(arr) {
+  return arr.reduce((acc, cur) => acc + cur.length, 0);
+}
+
+console.log(countCharacters(["###", "###", "###"]), 9);
+
+console.log(countCharacters(["22222222", "22222222"]), 16);
+
+console.log(countCharacters(["------------------"]), 18);
+
+console.log(countCharacters([]), 0);
+
+console.log(countCharacters(["", ""]), 0);
