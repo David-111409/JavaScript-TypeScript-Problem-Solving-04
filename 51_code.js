@@ -51,3 +51,34 @@ console.log(convertCartesian([3, 2, 2], [6, 1, 7]), [
   [2, 1],
   [2, 7],
 ]);
+
+/*
+Create a function that finds all even numbers from 1 to the given number.
+
+Examples
+
+findEvenNums(8) ➞ [2, 4, 6, 8]
+
+findEvenNums(4) ➞ [2, 4]
+
+findEvenNums(2) ➞ [2]
+*/
+
+function findEvenNums(n) {
+  let ar = [];
+  
+  for (let i = 2; i <= n; i += 2) {
+    ar.push(i);
+  }
+  
+  return ar;
+}
+
+console.log(findEvenNums(4), [2, 4]);
+console.log(findEvenNums(8), [2, 4, 6, 8]);
+
+console.log(findEvenNums(2), [2]);
+console.log(findEvenNums(1), []);
+
+console.log(findEvenNums(9), [2, 4, 6, 8]);
+console.log(findEvenNums(11), [2, 4, 6, 8, 10]);
