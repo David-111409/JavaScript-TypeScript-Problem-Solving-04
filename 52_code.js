@@ -132,3 +132,38 @@ console.log(notNotNot(3, true), false);
 console.log(notNotNot(13, true), false);
 console.log(notNotNot(24, false), false);
 console.log(notNotNot(6, false), false);
+
+/*
+Is the String in Order?
+Create a function that takes a string and returns true or false, depending on whether the characters are in order or not.
+
+Examples
+
+isInOrder("abc") ➞ true
+
+isInOrder("edabit") ➞ false
+
+isInOrder("123") ➞ true
+
+isInOrder("xyzz") ➞ true
+Notes
+
+You don't have to handle empty strings.
+*/
+
+function isInOrder(str) {
+  let arr = str.split("");
+  arr.sort();
+  let sortedStr = arr.join("");
+  return str === sortedStr;
+}
+
+console.log(isInOrder("abc"), true);
+console.log(isInOrder("edabit"), false);
+
+console.log(isInOrder("xyz"), true);
+
+console.log(isInOrder("xyzz"), true);
+console.log(isInOrder("123"), true);
+
+console.log(isInOrder("321"), false);
