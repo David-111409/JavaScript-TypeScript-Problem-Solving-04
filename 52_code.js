@@ -167,3 +167,37 @@ console.log(isInOrder("xyzz"), true);
 console.log(isInOrder("123"), true);
 
 console.log(isInOrder("321"), false);
+
+/*
+Is it an Object?
+Create a function to check whether the given parameter is an Object or not.
+
+Examples
+
+isObject(function add(x,y) {return x + y}) ➞ true
+
+isObject(new RegExp('^[a-zA-Z0-9]+$', 'g')) ➞ true
+
+isObject(null) ➞ false
+
+isObject("") ➞ false
+Notes
+
+Inputs may be null, primitive wrapper types, dates.
+*/
+
+function isObject(value) {
+  return (
+    (typeof value === "object" && value !== null) || typeof value === "function"
+  );
+}
+
+console.log(isObject(new Date()), true);
+console.log(isObject("12/12/2011"), false);
+
+console.log(isObject(null), false);
+
+console.log(isObject([1, 2, 3]), true);
+console.log(isObject({}), true);
+
+console.log(isObject(function () {}));
