@@ -102,3 +102,33 @@ console.log(PremiumPlan.hasHD, true);
 
 console.log(PremiumPlan.hasUHD, true);
 console.log(PremiumPlan.price, "$15.99");
+
+/*
+Not Not Not True
+Something which is not true is false, but something which is not not true is true! 
+Create a function where given n number of "not", evaluate whether it's true or false.
+
+Examples
+
+notNotNot(1, true) ➞ false
+// Not true
+
+notNotNot(2, false) ➞ false
+// Not not false
+
+notNotNot(6, true) ➞ true
+// Not not not not not not true
+*/
+
+function notNotNot(n, val) {
+  return n % 2 ? !val : val;
+}
+
+console.log(notNotNot(1, true), false);
+console.log(notNotNot(2, false), false);
+console.log(notNotNot(7, true), false);
+console.log(notNotNot(7, false), true);
+console.log(notNotNot(3, true), false);
+console.log(notNotNot(13, true), false);
+console.log(notNotNot(24, false), false);
+console.log(notNotNot(6, false), false);
