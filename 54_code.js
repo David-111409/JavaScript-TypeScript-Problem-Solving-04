@@ -186,3 +186,19 @@ const {
 } = store;
 
 console.log(`Store: ${name}, Product: ${title}, City: ${city}.`);
+
+{
+  const student = {
+    name: "Ali",
+    scores: {
+      math: 90,
+      english: 85,
+    },
+  };
+
+  const {
+    name: [firstLetter, secondLetter, thirdLetter],
+    scores: { math, science = 70 },
+  } = student;
+  console.log(firstLetter, secondLetter, thirdLetter, math, science); // A l i 90 70
+}
