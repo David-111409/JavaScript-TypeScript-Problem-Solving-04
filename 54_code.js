@@ -85,3 +85,104 @@ console.log(
 console.log(
   profit({ costPrice: 10780, sellPrice: 34999, inventory: 10 }) === 242190
 );
+
+// const obj = { one: 1, two: 2 };
+// const { one, two } = obj;
+// let one = obj.one
+// let two = obj.two
+
+// console.log(one, two);
+
+// const user = {
+//   name: "Dawoud",
+//   address: {
+//     city: "Riyadh",
+//     country: "Saudi Arabia",
+//   },
+// };
+// const {
+//   address: { city, country },
+// } = user;
+// console.log("city:", city, "// country:", country);
+
+// const users = [
+//   { name: "Ali", age: 25, country: "KSA" },
+//   { name: "Omar", age: 30, country: "Egypt" },
+//   { name: "Sara", age: 28, country: "UAE" },
+// ];
+
+// const [{ name }, { country }, { age }] = users;
+// console.log("Name:", name, "/ Country:", country, "/ Age:", age);
+
+// const user = {
+//   name: "Sara",
+//   info: {
+//     age: 25,
+//     address: {
+//       city: "Cairo",
+//     },
+//   },
+// };
+// const {
+//   name,
+//   info: {
+//     age,
+//     address: { country = "Egypt", city },
+//   },
+// } = user;
+// console.log(name, age, city, country);
+
+// const data = {
+//   users: [
+//     { name: "Ali", age: 25 },
+//     { name: "Sara", age: 30 },
+//   ],
+//   location: "Cairo",
+// };
+
+// const {
+//   users: [{ name }, { age }],
+//   location,
+// } = data;
+
+// console.log(name, age, location);
+
+// const product = {
+//   id: 101,
+//   details: {
+//     name: "Laptop",
+//     price: 1500,
+//     specs: {
+//       ram: "16GB",
+//       storage: "512GB SSD",
+//     },
+//   },
+// };
+// const {
+//   details: {
+//     name: productName,
+//     brand = "No brand",
+//     specs: { ram },
+//   },
+// } = product;
+
+// console.log(productName, ram, brand);
+
+const store = {
+  name: "TechWorld",
+  products: [
+    { id: 1, title: "Laptop", price: 1500 },
+    { id: 2, title: "Phone", price: 800 },
+  ],
+  location: {
+    country: "Japan",
+    city: "Tokyo",
+  },
+};
+const {
+  name,
+  products: [, { title }],
+  location: { city },
+} = store;
+
+console.log(`Store: ${name}, Product: ${title}, City: ${city}.`);
