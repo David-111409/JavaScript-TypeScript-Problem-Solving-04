@@ -53,3 +53,42 @@ console.log(
 
 console.log(makeChange(25), { q: 1, d: 0, n: 0, p: 0 });
 console.log(makeChange(36), { q: 1, d: 1, n: 0, p: 1 });
+
+/*
+Reverse Coding Challenge #6
+This is a reverse coding challenge. 
+Normally you're given explicit directions with how to create a function.
+Here, you must generate your own function to satisfy the relationship between the inputs and outputs.
+
+Your task is to create a function that, when fed the inputs below, produces the sample outputs shown.
+
+Examples
+
+mysteryFunc(152) ➞ 10
+
+mysteryFunc(832) ➞ 48
+
+mysteryFunc(19) ➞ 9
+
+mysteryFunc(133) ➞ 9
+*/
+
+function mysteryFunc(num) {
+  //   let arr = num.toString().split("");
+  //   return arr.reduce((acc, cur) => acc * cur, 1);
+  let prod = 1;
+  while (num) {
+    let last = num % 10;
+    prod *= last;
+    num = Math.floor(num / 10);
+  }
+  return prod;
+}
+
+console.log(mysteryFunc(152), 10);
+console.log(mysteryFunc(832), 48);
+
+console.log(mysteryFunc(5511), 25);
+console.log(mysteryFunc(19), 9);
+
+console.log(mysteryFunc(133), 9);
