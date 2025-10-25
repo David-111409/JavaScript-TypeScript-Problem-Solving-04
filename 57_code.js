@@ -141,3 +141,46 @@ console.log(
 console.log(
   noYelling("That's a ton!! of cheese!!!!") === "That's a ton!! of cheese!"
 );
+
+/*
+wordFrequency("I love JavaScript and I love coding");
+// ➞ { i: 2, love: 2, javascript: 1, and: 1, coding: 1 }
+*/
+function wordFrequency(str) {
+  let arr = str.split(" ");
+
+  return arr.reduce((acc, word) => {
+    word = word.toLowerCase();
+    acc[word] = (acc[word] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+console.log(
+  wordFrequency(
+    "I love JavaScript and I love the coding and love the way it works"
+  )
+);
+
+/*
+unique([1, 2, 2, 3, 4, 4, 5]);
+// ➞ [1, 2, 3, 4, 5]
+*/
+
+function unique(arr) {
+  //   return arr.filter((n, index) => arr.indexOf(n) === index); // time o(n ^ 2)
+  //   return [...new Set(arr)]; // time o(n)
+  //   return Array.from(new Set(arr)); // time o(n)
+  let st = new Set();
+  
+  return Array.from(
+    arr.reduce((acc, n) => {
+      if (!st.has(n)) {
+        acc.add(n);
+      }
+      return acc;
+    }, st)
+  );
+}
+
+console.log(unique([1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 7, 7]));
