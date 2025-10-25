@@ -101,3 +101,43 @@ console.log(flatten([[[[[2, 14, "rubber"]]], 2, 3, 4]]), [
 console.log(flatten([0, [12, "biratnagar", [[2]]]]), [0, 12, "biratnagar", 2]);
 console.log(flatten([["balkot"]]), ["balkot"]);
 console.log(flatten([1, 2, 3, 4, 5, 6]), [1, 2, 3, 4, 5, 6]);
+
+/*
+noYelling("What went wrong?????????") ➞ "What went wrong?"
+
+noYelling("Oh my goodness!!!") ➞ "Oh my goodness!"
+
+noYelling("I just!!! can!!! not!!! believe!!! it!!!") ➞ "I just!!! can!!! not!!! believe!!! it!"
+// Only change repeating punctuation at the end of the sentence.
+
+noYelling("Oh my goodness!") ➞ "Oh my goodness!"
+// Do not change sentences where there exists only one or zero exclamation marks/question marks.
+
+noYelling("I just cannot believe it.") ➞ "I just cannot believe it."
+*/
+
+function noYelling(str) {
+  if (/[!?]{2,}$/.test(str)) {
+    return noYelling(str.slice(0, -1));
+  }
+  
+  return str;
+}
+
+console.log(noYelling("What went wrong?????????") === "What went wrong?");
+console.log(noYelling("Oh my goodness!!!") === "Oh my goodness!");
+console.log(noYelling("WHAT!") === "WHAT!");
+
+console.log(noYelling("WHAT?") === "WHAT?");
+console.log(noYelling("Oh my goodness!") === "Oh my goodness!");
+console.log(
+  noYelling("I just cannot believe it.") === "I just cannot believe it."
+);
+
+console.log(
+  noYelling("I just!!! can!!! not!!! believe!!! it!!!") ===
+    "I just!!! can!!! not!!! believe!!! it!"
+);
+console.log(
+  noYelling("That's a ton!! of cheese!!!!") === "That's a ton!! of cheese!"
+);
