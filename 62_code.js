@@ -22,3 +22,34 @@ console.log(cars(959, 331, 537), 239);
 console.log(cars(416, 340, 551), 104);
 console.log(cars(692, 348, 543), 173);
 console.log(cars(527, 412, 951), 131);
+
+function dartsScoring(x, y) {
+  let R = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+  if (R > 10) {
+    return 0;
+  } else if (R > 5) {
+    return 1;
+  } else if (R > 1) {
+    return 5;
+  } else {
+    return 10;
+  }
+}
+
+console.log(dartsScoring(-9, 9), 0);
+console.log(dartsScoring(0, 10), 1);
+console.log(dartsScoring(-5, 0), 5);
+
+console.log(dartsScoring(0, -1), 10);
+console.log(dartsScoring(0, 0), 10);
+console.log(dartsScoring(-0.1, -0.1), 10);
+
+console.log(dartsScoring(0.7, 0.7), 10);
+console.log(dartsScoring(0.8, -0.8), 5);
+console.log(dartsScoring(-3.5, 3.5), 5);
+
+console.log(dartsScoring(-3.6, -3.6), 1);
+console.log(dartsScoring(-7.0, 7.0), 1);
+console.log(dartsScoring(7.1, -7.1), 0);
+
+console.log(dartsScoring(0.5, -4), 5);
