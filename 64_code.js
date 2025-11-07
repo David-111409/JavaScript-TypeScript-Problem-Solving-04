@@ -60,3 +60,55 @@ const longestWord = (str) =>
     .reduce((acc, word) => (acc.length > word.length ? acc : word), "");
 console.log(longestWord("This is the world of mexicanettyte president"));
 console.log(longestWord("I love JavaScript, Reactjsnewversion*****!! and coding."));
+
+/*
+import { useState } from "react";
+import "./App.css";
+// /*reverseVowels("hello") → "holle"
+// reverseVowels("javascript") → "jivascrapt"
+// reverseVowels("AEIOU") → "UOIEA"
+//  */
+
+// function reverseVowels(str) {
+//   let vowels = new Set("aeiouAEIOU");
+//   let arr = str.split("");
+//   let left = 0;
+//   let right = arr.length - 1;
+//   while (left < right) {
+//     if (!vowels.has(arr[left])) {
+//       left++;
+//     } else if (!vowels.has(arr[right])) {
+//       right--;
+//     } else {
+//       [arr[left], arr[right]] = [arr[right], arr[left]];
+//       left++;
+//       right--;
+//     }
+//   }
+//   return arr.join("");
+// }
+// // The time of the function is O(n) and the space complexity is O(n)
+// console.log(reverseVowels("hello"));
+/*
+function App() {
+  const [items, setItems] = useState([
+    { id: 1, name: "item1", count: 1 },
+    { id: 2, name: "item2", count: 2 },
+    { id: 3, name: "item3", count: 3 },
+  ]);
+  
+  function Component({ items }) {
+    return <ul>{items}</ul>;
+  }
+
+  return (
+    <Component
+      items={items.map(
+        (item) => item.count > 1 && <li className="item" key={item.id}>{item.name}</li>
+      )}
+    />
+  );
+}
+
+export default App;
+*/
