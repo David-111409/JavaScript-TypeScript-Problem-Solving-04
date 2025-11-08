@@ -55,3 +55,22 @@ function reverseWords(str) {
 }
 
 console.log(reverseWords("I love JavaScript"));
+
+// console.log(1 ^ 7 , 7 ^ 1);
+// console.log(2 ^ 4);
+// xorPairs([1, 2, 3, 4, 5], 6)
+
+function xorPairs(arr, k) {
+    let pairs = [];
+    let set = new Set(arr);
+    for (let ele of arr) {
+        const theOther = ele ^ k;
+        if (set.has(theOther)) {
+            pairs.push([ele, theOther]);
+            set.delete(theOther);
+            set.delete(ele);
+        }
+    }
+    return pairs;
+}
+console.log(xorPairs([1, 2, 3, 4, 5 , 7], 6));
