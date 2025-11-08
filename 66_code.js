@@ -15,6 +15,7 @@
 // console.log(Object.entries(obj)); // time : O(n)
 
 function binarySearch(arr, target) {
+  // with iteration
   let left = 0;
   let right = arr.length - 1;
 
@@ -75,3 +76,17 @@ function lastOccurence(ar, target) {
 }
 
 console.log(lastOccurence([1, 1, 1, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2));
+function binarySearch(arr, target, start = 0, end = arr.length - 1) {
+  // with recursion
+  if (start > end) {
+    return -1;
+  }
+  let mid = Math.floor((start + end) / 2);
+  if (arr[mid] === target) {
+    return mid;
+  } else if (arr[mid] < target) {
+    return binarySearch(arr, target, mid + 1, end);
+  }
+  return binarySearch(arr, target, start, mid - 1);
+}
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2));
