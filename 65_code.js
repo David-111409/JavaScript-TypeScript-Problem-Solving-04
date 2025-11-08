@@ -74,3 +74,19 @@ function xorPairs(arr, k) {
     return pairs;
 }
 console.log(xorPairs([1, 2, 3, 4, 5 , 7], 6));
+
+const words = ["eat", "tea", "tan", "ate", "nat", "bat", "hello", "hey"];
+function groupAnagrams(words) {
+    const obj = {};
+    for (let word of words) {
+        const sortedWord = [...word].sort().join("");
+        if (obj[sortedWord]) {
+            obj[sortedWord].push(word);
+        } else {
+            obj[sortedWord] = [word];
+        }
+    }
+
+    return Object.values(obj).filter((el) => el.length > 1);
+}
+console.log(groupAnagrams(words));
