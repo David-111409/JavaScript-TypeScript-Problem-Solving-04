@@ -52,3 +52,36 @@ console.log(sqrt(1));
 console.log(sqrt(2));
 console.log(sqrt(3));
 console.log(sqrt(4));
+
+class Stack {
+  constructor(items) {
+    this.items = [];
+  }
+  push(item) {
+    this.items.push(item);
+  }
+  pop() {
+    if (this.items.length > 0) {
+      return this.items.pop();
+    }
+  }
+  peek() {
+    return this.items[this.items.length - 1];
+  }
+  isEmpty() {
+    return this.size() === 0;
+  }
+  size() {
+    return this.items.length;
+  }
+  clear() {
+    this.items = [];
+  }
+}
+
+const stack = new Stack();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+stack.push(4);
+console.log(stack.peek(), stack.size(), stack.isEmpty(), stack.pop());
