@@ -85,3 +85,17 @@ stack.push(2);
 stack.push(3);
 stack.push(4);
 console.log(stack.peek(), stack.size(), stack.isEmpty(), stack.pop());
+
+function stack(str) {
+  let stack = [];
+  for (let i = 0; i < str.length; i++) {
+    if (stack[stack.length - 1] === str[i]) {
+      stack.pop();
+    } else {
+      stack.push(str[i]);
+    }
+  }
+  return stack.join("");
+}
+
+console.log(stack("bcaacbd"));
