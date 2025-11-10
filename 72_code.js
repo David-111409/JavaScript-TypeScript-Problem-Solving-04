@@ -80,3 +80,36 @@ console.log(totalSales(table3, "A"), "Product not found");
 console.log(totalSales(table3, "T"), 16);
 console.log(totalSales(table3, "Y"), "Product not found");
 console.log(totalSales(table3, "W"), 25);
+
+/*
+Two Product Problem (Part 2)
+
+Create a function that takes an array arr and a number n and returns an array of two integers whose product is that of the number n.
+Examples
+
+twoProduct([1, 2, 3, 4, 13, 5], 39) ➞ [3, 13]
+
+twoProduct([11, 2, 7, 3, 5, 0], 55) ➞ [5, 11]
+
+twoProduct([100, 12, 4, 1, 2], 15) ➞ undefined
+*/
+function twoProduct(arr, n) {
+  let nums = new Set();
+
+  for (let num of arr) {
+    if (num && n % num === 0) {
+      const target = n / num;
+      if (nums.has(target)) {
+        return [Math.min(num, target), Math.max(num, target)];
+      }
+    }
+
+    nums.add(num);
+  }
+}
+
+console.log(twoProduct([100, 12, 4, 1, 2], 15), undefined);
+console.log(twoProduct([11, 2, 7, 3, 5, 0], 55), [5, 11]);
+console.log(twoProduct([1, 2, 3, 4, 13, 5], 39), [3, 13]);
+console.log(twoProduct([1, 2, -1, 4, 5], 20), [4, 5]);
+console.log(twoProduct([1, 2, 3, 4, 5], 10), [2, 5]);
