@@ -28,3 +28,26 @@ console.log(sharedLetters("spout", "shout"), 4);
 console.log(sharedLetters("took", "taken"), 2);
 console.log(sharedLetters("mentor", "terminal"), 5);
 console.log(sharedLetters("class", "last"), 3);
+
+/*
+import React from "react";
+const Log = ({ name }) => {
+  const [log, setLog] = React.useState(false);
+  return (
+    <>
+      <button onClick={() => setLog(!log)}>
+        click me to log {log ? "out" : "in"}
+      </button>
+      <h1>
+        Hello, {name}. {log ? "You are loged in." : "You are not loged in."}
+      </h1>
+    </>
+  );
+};
+
+function App() {
+  return <Log name="John" />;
+}
+
+export default App;
+*.
