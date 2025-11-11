@@ -101,3 +101,30 @@ console.log(releaseYear("Flower Boy"), 2017, "error");
 console.log(releaseYear("Kamikaze"), 2018, "error");
 console.log(releaseYear("folklore"), 2020, "error");
 console.log(releaseYear("Opal"), "Unknown", "error");
+
+/*
+const albums = {
+  2015: ["Vulnicura", "Honeymoon", "Rebel Heart"],
+  2016: ["Lemonade", "Blackstar", "A Moon Shaped Pool"],
+  2017: ["Flower Boy", "Antisocialites"],
+  2018: ["El Mal Querer", "Someone Out There", "Cranberry", "Kamikaze"],
+  2019: ["thank u next", "Magdalene", "Ode to Joy"],
+  2020: ["Rough and Rowdy Ways", "folklore", "Future Nostalgia", "Colores"],
+};
+const albumsObj = {};
+for (let year in albums) {
+  let names = albums[year];
+  // console.log(year, names);
+  for (let name of names) {
+    albumsObj[name] = year;
+  }
+}
+function releaseYear(album) {
+  // return (
+  //   Object.entries(albums).find(([_, albumList]) =>
+  //     albumList.includes(album)
+  //   )?.[0] || "Unknown"
+  // );
+  return albumsObj[album] ?? "Unknown";
+}
+*/
