@@ -75,3 +75,29 @@ console.log(
   ]),
   11
 );
+
+function releaseYear(album) {
+  const albums = {
+    2015: ["Vulnicura", "Honeymoon", "Rebel Heart"],
+    2016: ["Lemonade", "Blackstar", "A Moon Shaped Pool"],
+    2017: ["Flower Boy", "Antisocialites"],
+    2018: ["El Mal Querer", "Someone Out There", "Cranberry", "Kamikaze"],
+    2019: ["thank u next", "Magdalene", "Ode to Joy"],
+    2020: ["Rough and Rowdy Ways", "folklore", "Future Nostalgia", "Colores"],
+  };
+  return (
+    Object.entries(albums).find(([_, albumList]) =>
+      albumList.includes(album)
+    )?.[0] || "Unknown"
+  );
+}
+
+console.log(releaseYear("Rebel Heart"), 2015, "error");
+console.log(releaseYear("Someone Out There"), 2018, "error");
+console.log(releaseYear("Where Wildness Grows"), "Unknown", "error");
+console.log(releaseYear("thank u next"), 2019, "error");
+console.log(releaseYear(2017), "Unknown", "error");
+console.log(releaseYear("Flower Boy"), 2017, "error");
+console.log(releaseYear("Kamikaze"), 2018, "error");
+console.log(releaseYear("folklore"), 2020, "error");
+console.log(releaseYear("Opal"), "Unknown", "error");
