@@ -51,3 +51,28 @@ function App() {
 
 export default App;
 */
+/*
+Total Number of Unique Characters
+
+Given two strings, create a function that returns the total number of unique characters from the combined string.
+Examples
+
+countUnique("apple", "play") ➞ 5
+// "appleplay" has 5 unique characters:
+// "a", "e", "l", "p", "y"
+
+countUnique("sore", "zebra") ➞ 7
+// "sorezebra" has 7 unique characters:
+// "a", "b", "e", "o", "r", "s", "z"
+
+countUnique("a", "soup") ➞ 5
+*/
+function countUnique(str1, str2) {
+  return new Set(str1 + str2).size;
+}
+
+console.log(countUnique("apple", "play"), 5);
+console.log(countUnique("sore", "zebra"), 7);
+console.log(countUnique("pip", "geeks"), 6);
+console.log(countUnique("a", "soup"), 5);
+console.log(countUnique("maniac", "maniac"), 5);
