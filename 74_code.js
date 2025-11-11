@@ -46,8 +46,8 @@ const Log = ({ name }) => {
 };
 
 function App() {
-  return <Log name="John" />;
+  return <Log name="Dawoud Bake alkaber" />;
 }
 
 export default App;
-*.
+*/
