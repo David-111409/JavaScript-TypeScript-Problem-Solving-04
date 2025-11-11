@@ -76,3 +76,25 @@ console.log(countUnique("sore", "zebra"), 7);
 console.log(countUnique("pip", "geeks"), 6);
 console.log(countUnique("a", "soup"), 5);
 console.log(countUnique("maniac", "maniac"), 5);
+
+/*
+Given any number of parameters, return true if none of the arguments are falsy.
+Examples
+
+nothingIsNothing(0, false, undefined, null) ➞ false
+
+nothingIsNothing(33, "Hello",  true,  []) ➞ true
+
+nothingIsNothing(true, false) ➞ false
+*/
+function nothingIsNothing(...args) {
+  return args.every((arg) => arg);
+}
+
+console.log(nothingIsNothing(0, false, [], {}), false);
+console.log(nothingIsNothing(33, "Hello", (true, true, 3)), true);
+console.log(nothingIsNothing(true, null), false);
+console.log(nothingIsNothing(null, null), false);
+console.log(nothingIsNothing(221), true);
+console.log(nothingIsNothing(221, 0, 0, 0), false);
+console.log(nothingIsNothing([221, 0, 0, 0]), true);
