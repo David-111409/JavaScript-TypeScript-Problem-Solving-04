@@ -32,3 +32,17 @@ function squareDigit(n) {
 }
 console.log(squareDigit(223));
 console.log("hello world from the country of Egypt".camelCase());
+
+const longestWord = (ar) =>
+    ar.reduce((a, b) => (a.length > b.length ? a : b), "");
+
+console.log(longestWord(["apple24", "banana", "cherry"]));
+
+const name = ["E", "@", "@", "l", "z", "e", "@", "@", "r", "@", "@", "o"];
+
+// const filteredName = name.filter((item) => item !== "@");
+const filteredName = name.reduce((a, b) => (b !== "@" ? a + b : a), "");
+console.log(filteredName);
+
+const filter2 = name.reduce((a, b) => (b !== "@" ? `${a}${b}` : a), "");
+console.log(filter2);
