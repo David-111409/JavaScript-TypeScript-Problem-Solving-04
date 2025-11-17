@@ -45,3 +45,24 @@ console.log(sqr(0));
 console.log(Math.sqrt("hello"));
 console.log(Math.sqrt(NaN));
 console.log(Math.sqrt(-Infinity));
+// function trim(str) {
+//     // if (str[0] !== " " && !str.endsWith(" ")) {
+//     //     return str;
+//     // } else if (str.startsWith(" ")) {
+//     //     return trim(str.slice(1));
+//     // } else if (str.endsWith(" ")) {
+//     //     return trim(str.slice(0, -1));
+//     // }
+//     return str.split(/\s+/g).filter((el) => !!el).join(" ");
+// }
+
+// console.log(trim("   hello       "));
+// console.log(trim("   aa  \u3000"));
+function removeChars(str) {
+    while (/b|ac/g.test(str)) {
+        str = str.replace(/b/g, "").replace(/ac/g, "");
+    }
+    return str;
+}
+
+console.log(removeChars("cabbaabcca"));
