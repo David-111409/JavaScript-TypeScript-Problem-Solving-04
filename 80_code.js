@@ -46,3 +46,29 @@ console.log(filteredName);
 
 const filter2 = name.reduce((a, b) => (b !== "@" ? `${a}${b}` : a), "");
 console.log(filter2);
+function mostCommonLetter(str) {
+    let freq = {};
+    let maxCount = 0;
+    str = str.toLowerCase();
+    for (let ch of str) {
+        if (ch !== " ") {
+            // count letters not the space.
+            freq[ch] = (freq[ch] || 0) + 1;
+
+            if (freq[ch] > maxCount) {
+                maxCount = freq[ch];
+            }
+        }
+    }
+    for (let [char, count] of Object.entries(freq)) {
+        if (count === maxCount) {
+            return char;
+        }
+    }
+}
+
+function replaceCommon(string, letter) {
+    let mostCommon = mostCommonLetter(string);
+    // return mostCommon;
+    return string.replaceAll(mostCommon, letter);
+}
