@@ -38,3 +38,13 @@ function flatten(ar, depth = 1) {
 
 console.log(flatten([[[2, 3], 4, 5, [[[4]]], [[[6]]]]], 2));
 console.log(flatten([1, [2], [3, [4]]], 1));
+
+// Write a function that takes in a string and returns the number of unique characters in the string
+
+function uniqueCharacters(str) {
+    return new Set(str).size;
+}
+
+console.log(uniqueCharacters("hello"));
+console.log(uniqueCharacters("world"));
+console.log(uniqueCharacters("javascript"));
