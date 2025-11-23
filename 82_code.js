@@ -48,3 +48,16 @@ function uniqueCharacters(str) {
 console.log(uniqueCharacters("hello"));
 console.log(uniqueCharacters("world"));
 console.log(uniqueCharacters("javascript"));
+
+const words = ["Apple", "banana", "Cherry", "apricot", "blueberry", "carrot"];
+
+const fitlerByFirstLetter = words.reduce((acc, cur) => {
+  let firstLetter = cur[0].toLowerCase();
+  if (!acc[firstLetter]) {
+    acc[firstLetter] = [];
+  }
+  acc[firstLetter].push(cur);
+  return acc;
+}, {});
+
+console.log(fitlerByFirstLetter);
