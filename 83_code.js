@@ -23,3 +23,21 @@ console.log(minusOne(x));
 console.log(minusOne(x));
 console.log(minusOne(x));
 }
+
+function gradePercentage(userScore, passScore) {
+    let myScore = +userScore.slice(0, -1);
+    let pass = +passScore.slice(0, -1);
+
+    if (myScore >= pass) {
+        return "You PASSED the Exam";
+    } else {
+        return "You FAILED the Exam";
+    }
+}
+
+console.log(gradePercentage("85%", "85%") === "You PASSED the Exam");
+console.log(gradePercentage("99%", "85%") === "You PASSED the Exam");
+console.log(gradePercentage("65%", "90%") === "You FAILED the Exam");
+console.log(gradePercentage("65%", "66%") === "You FAILED the Exam");
+console.log(gradePercentage("5%", "8%") === "You FAILED the Exam");
+console.log(gradePercentage("8%", "5%") === "You PASSED the Exam");
