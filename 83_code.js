@@ -41,3 +41,18 @@ console.log(gradePercentage("65%", "90%") === "You FAILED the Exam");
 console.log(gradePercentage("65%", "66%") === "You FAILED the Exam");
 console.log(gradePercentage("5%", "8%") === "You FAILED the Exam");
 console.log(gradePercentage("8%", "5%") === "You PASSED the Exam");
+
+function calculateSum(txt) {
+    return txt.split("").reduce((acc, cur) => acc + cur.charCodeAt(0), 0);
+}
+
+function reverseString(txt) {
+    return txt.split("").reduce((acc, cur) => cur + acc, "");
+}
+
+console.log(calculateSum("orange"), 636);
+console.log(calculateSum("lime"), 423);
+console.log(calculateSum("mushroom"), 890);
+console.log(reverseString("Think"), "knihT");
+console.log(reverseString("world"), "dlrow");
+console.log(reverseString("people"), "elpoep");
