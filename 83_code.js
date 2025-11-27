@@ -72,3 +72,45 @@ console.log(hasValidPrice({ product: "Flour" }), false);
 console.log(hasValidPrice({ product: "Cerials", price: "3.0" }), false);
 console.log(hasValidPrice({ product: "Beer", price: NaN }), false);
 console.log(hasValidPrice(), false);
+
+function shirtSize({ size = "big" } = {}) {
+    return size;
+}
+
+const str = `
+function shirtSize({size = "big"}) { 
+  return size
+}
+`;
+
+eval(str);
+
+const result = shirtSize();
+
+const code = str.slice(str.lastIndexOf("return"), str.lastIndexOf("}"));
+const param = str.slice(0, 26);
+
+const validParams = () => {
+    return /\{.*size/.test(param) ? "valid" : "not valid";
+};
+
+const validReturn = () => {
+    return code.includes("size") ? "valid" : "not valid";
+};
+
+const doubleReturns = () => {
+    return str.match(/return/g).length >= 2 ? "not valid" : "valid";
+};
+
+console.log(doubleReturns(), "valid", "Multiple returns are not allowed.");
+console.log(
+    validParams(),
+    "valid",
+    'Do not remove or manipulate the object {size = "big"} inside of the parameters.'
+);
+console.log(
+    validReturn(),
+    "valid",
+    "Changing the return statement is not allowed."
+);
+console.log(result, "big");
