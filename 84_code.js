@@ -13,3 +13,29 @@ console.log(floatSum(99.1, 0.109) === 99.209);
 console.log(floatSum(50.1234, 11.5678) === 61.6912);
 console.log(floatSum(3.4444, 3.5555) === 6.9999);
 console.log(floatSum(2.12022, 1.110001) === 3.230221);
+
+const ar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+// let index = 0;
+// let l = ar.length;
+// for (let i = 0; i < l; i++) {
+//     if (ar[i] % 2 === 0) {
+//         ar[index++] = ar[i];
+//     } else if (ar[i] % 2 === 1) {
+//         ar.push(ar[i]);
+//     }
+//     ar.splice(i, 1);
+// }
+
+// console.log(ar);
+
+let index = 0;
+let l = ar.length;
+for (let i = 0; i < l; i++) {
+    if (ar[i] % 2 === 0) {
+        [ar[index], ar[i]] = [ar[i], ar[index]];
+        index++;
+    }
+}
+
+console.log(ar);
