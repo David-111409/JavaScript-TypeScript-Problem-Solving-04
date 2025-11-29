@@ -39,3 +39,31 @@ for (let i = 0; i < l; i++) {
 }
 
 console.log(ar);
+
+// function addEvenfirst(ar){
+//     let ind = 0;
+//     let l = ar.length;
+//     for (let i = 0; i < l; i++){
+//         if (ar[i] % 2 == 0){
+//             [[ar[ind], ar[i]]] = [[ar[i], ar[ind]]];
+//             ind++;
+//         }
+//     }
+//     return ar;
+// }
+
+// console.log(addEvenfirst([2, 1, 3, 4, 5]));
+
+function addZerosLast(ar) {
+    let l = ar.length;
+    let ind = l - 1;
+    for (let i = l - 1; i >= 0; i--) {
+        if (ar[i] == 0) {
+            ar.push(ar[i]);
+            ar.splice(i, 1);
+        }
+    }
+    return ar;
+}
+
+console.log(addZerosLast([2, 0, 3, 1, 0, 5, 10, 0, 6, 3, -1, 0]));
