@@ -90,3 +90,36 @@ console.log(name);
 console.log(email);
 console.log(city);
 console.log(firstSkill);
+
+const product = {
+    id: 5001,
+    title: "MacBook Air M2",
+    price: 1200,
+    details: {
+        brand: "Apple",
+        color: "Space Gray",
+        specs: {
+            ram: "16GB",
+            storage: "512GB SSD",
+        },
+    },
+    reviews: [
+        { user: "Ali", rating: 5 },
+        { user: "Sara", rating: 4 },
+    ],
+};
+
+const {
+    title: productTitle,
+    details: {
+        brand,
+        specs: { ram },
+    },
+    reviews: [{ rating: firstRating }],
+    discount = "Not available",
+} = product;
+console.log(productTitle);
+console.log(brand);
+console.log(ram);
+console.log(firstRating);
+console.log(discount);
