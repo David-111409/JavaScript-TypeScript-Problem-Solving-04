@@ -64,3 +64,29 @@ function showNumber(chosen) {
 }
 
 showNumber(chosen);
+
+const user = {
+    id: 101,
+    name: "Muhammad",
+    contact: {
+        email: "muhammad@example.com",
+        phone: "+201234567890",
+    },
+    address: {
+        city: "Cairo",
+        country: "Egypt",
+    },
+    skills: ["JavaScript", "React", "Node.js"],
+};
+
+const {
+    name,
+    contact: { email },
+    address: { city },
+    skills: [firstSkill],
+} = user;
+
+console.log(name);
+console.log(email);
+console.log(city);
+console.log(firstSkill);
