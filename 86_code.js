@@ -51,3 +51,44 @@ let ar = [1, 2, 3, 4, 5];
 // ar.shift();
 console.log(ar.shift());
 // console.log(ar);
+
+// let modal = true;
+
+// if (modal) {
+//     console.log("modal");
+// }
+
+// console.log(modal.constructor.name);
+
+// let n = 10;
+// let f = new Number(10);
+// console.log(n.constructor.name);
+// console.log(f.constructor.name);
+// console.log(n === f, n == f);
+// console.log(n instanceof Number, f instanceof Number);
+
+/*
+  Number Challenge
+*/
+
+let a = 100;
+let b = 2_00.5;
+let c = 1e2;
+let d = 2.4;
+
+// Find Smallest Number In All Variables And Return Integer
+// console.log(Math.trunc(Math.min(a, b, c, d)));
+
+// Use Variables a + d One Time To Get The Needed Output
+// console.log(Math.pow(Math.round((a + d) / 10), 4)); // 10000
+
+// Get Integer "2" From d Variable With 4 Methods
+// console.log(Math.round(d));
+// console.log(Math.floor(d));
+// console.log(Math.trunc(d));
+// console.log(-Math.ceil(-d));
+
+// Use Variables b + d To Get This Valus
+// console.log(Math.floor((b + d) / 3)); // 66.67 => String
+let res = (Math.trunc((b + d) / 10) * 10) / 3;
+console.log(String(Math.round(res * 100) / 100)); // 67 => Number
