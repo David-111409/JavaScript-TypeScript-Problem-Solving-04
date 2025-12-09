@@ -40,3 +40,14 @@ function intersactionOfArray(ar1, ar2) {
 }
 
 console.log(intersactionOfArray([1, 2, 3, 4, 5], [6, 7, 8, 9, 10, 5, 2, 3]));
+
+let n1 = [10, 30, 10, 20];
+let n2 = [30, 20, 10];
+
+let result = Math.max(...n1) * [...n1, ...n2].length;
+console.log(result);
+
+let ar = [1, 2, 3, 4, 5];
+// ar.shift();
+console.log(ar.shift());
+// console.log(ar);
