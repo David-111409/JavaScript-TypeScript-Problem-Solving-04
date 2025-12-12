@@ -52,3 +52,20 @@ console.log(signAll(obj2, name), {
     },
     signature: name,
 });
+
+function generateScores() {
+    const scores = [];
+    for (let i = 0; i < 5; i++) {
+        scores.push(Math.floor(Math.random() * 100) + 1);
+    }
+    let average = scores.reduce((a, b) => a + b, 0) / scores.length;
+    average = +average.toFixed(2);
+    return {
+        scores: scores,
+        highest: Math.max(...scores),
+        lowest: Math.min(...scores),
+        average,
+    };
+}
+
+console.log(generateScores());
