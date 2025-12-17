@@ -101,3 +101,28 @@ console.log(
     ),
     true
 );
+
+// let i = 102;
+
+// switch (i) {
+//     case 10:
+//     case 12:
+//         console.log("10 or 12");
+//         break;
+//     case 20:
+//         console.log("20");
+//         break;
+//     default:
+//         console.log("default");
+// }
+
+function validateNumberString(str) {
+    if (!str) return false;
+    let res = Number(str);
+    return !Number.isNaN(res);
+    
+    
+}
+
+
+console.log(validateNumberString(""));
