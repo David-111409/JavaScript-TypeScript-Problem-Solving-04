@@ -53,3 +53,11 @@ function removeZeros(ar) {
 
 removeZeros(ar);
 console.log(ar);
+
+let user = { name: "Dawoud", age: 28, country: { city: "Mit" } };
+// let clone = { ...user };
+// let clone = Object.assign({}, user);
+let clone = JSON.parse(JSON.stringify(user));
+user.name = "Ahmed";
+user.country.city = "Cairo";
+console.log(user, clone);
