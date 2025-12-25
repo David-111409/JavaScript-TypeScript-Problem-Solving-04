@@ -60,3 +60,64 @@ if (holdiays === 0) {
     money = 40;
 }
 console.log("Money: " + money);
+
+// console.log("❤️".length);
+
+// let a = "❤️".repeat(100);
+// console.log(a.length);
+
+// let b = "❤️".repeat(100).split("");
+// console.log(b);
+
+// console.log("hello".split(""));
+
+// let c = "hello👍".split("");
+// let c = "hello👍";
+// console.log(c.length);
+// console.log(c.slice(5));
+// console.log(c[6]);
+
+// let day = "   friday  ";
+// // // You Need To Remove Spaces And Make First Letter Capital => Friday
+// day = day.trim();
+// day = day.charAt(0).toUpperCase() + day.slice(1);
+// console.log(day);
+
+// let day = "Wednesday";
+// let day = "Saturday";
+// let day = "Sunday";
+let day = "Tuesday";
+
+switch (day) {
+    case "Friday":
+    case "Saturday":
+    case "Sunday":
+        console.log("No Appointments Available");
+        break;
+
+    case "Monday":
+    case "Thursday":
+        console.log("From 10:00 AM To 5:00 PM");
+        break;
+    case "Tuesday":
+        console.log("From 10:00 AM To 6:00 PM");
+        break;
+    case "Wednesday":
+        console.log("From 10:00 AM To 7:00 PM");
+        break;
+    default:
+        console.log("Its Not A Valid Day");
+}
+// Output => "No Appointments Available"
+
+// let day = "Thursday";
+// // Output => "From 10:00 AM To 5:00 PM"
+
+// let day = "Tuesday";
+// // Output => "From 10:00 AM To 6:00 PM"
+
+// let day = "Wednesday";
+// // Output => "From 10:00 AM To 7:00 PM"
+
+// let day = "World";
+// // Output => "Its Not A Valid Day"
