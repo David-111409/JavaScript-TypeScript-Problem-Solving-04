@@ -128,3 +128,21 @@ function alternate(first, sec) {
 }
 
 console.log(alternate(one, two));
+
+// a = 20;
+// var a;
+// console.log(a);
+
+// console.log(a);
+// var a = 2;
+console.log(null == undefined); // true
+console.log(null === undefined); // false
+console.log(typeof undefined, typeof null);
+
+const a = {};
+a.key = "khaled";
+
+const b = { ...a }; // { key: "khaled" }
+
+b.key = "Hager";
+console.log(a, b);
