@@ -1,0 +1,82 @@
+type Book = {
+  title: string;
+  author: string;
+  isAvailable: boolean;
+};
+
+class Library {
+  private books: Book[] = [];
+
+  addBook(title: string, author: string): void {
+    this.books.push({ title, author, isAvailable: true });
+  }
+
+  borrowBook(title: string): void {
+    let found = this.books.find((book) => book.title === title);
+    if (!found) {
+      throw new Error("Book is not found");
+    }
+
+    const { isAvailable } = found;
+    if (!isAvailable) {
+      throw new Error("The book is already out");
+    }
+    found.isAvailable = false;
+  }
+
+  returnBook(returnTitle: string): void {
+    const found = this.books.find(
+      ({ title, isAvailable }) => !isAvailable && title === returnTitle
+    );
+    if (found) {
+      found.isAvailable = true;
+    }
+  }
+
+  listAvailableBooks(): string[] {
+    return this.books.reduce((titles, { isAvailable, title }) => {
+      if (isAvailable) titles.push(title);
+      return titles;
+    }, [] as string[]);
+  }
+}
+
+// const myLibrary = new Library();
+// myLibrary.addBook("book 1", "dawoud");
+// myLibrary.addBook("book 2", "khaled");
+// myLibrary.addBook("book 3", "hager");
+// // myLibrary.borrowBook("book 2");
+// // myLibrary.borrowBook("book 4");
+// try {
+//   myLibrary.borrowBook("book 1");
+//   //   myLibrary.borrowBook("book 5");
+//   //   myLibrary.borrowBook("book 3");
+//   //   myLibrary.returnBook("book 2");
+//   //   myLibrary.borrowBook("book 2");
+//   console.log(myLibrary.listAvailableBooks());
+// } catch (error) {
+//   console.log(error);
+// }
+
+const myLibrary = new Library();
+
+myLibrary.addBook("The Great Gatsby", "F. Scott Fitzgerald");
+myLibrary.addBook("1984", "George Orwell");
+myLibrary.addBook("The Hobbit", "J.R.R. Tolkien");
+
+console.log(myLibrary.listAvailableBooks());
+// Expected: ["The Great Gatsby", "1984", "The Hobbit"]
+myLibrary.borrowBook("1984");
+console.log(myLibrary.listAvailableBooks());
+// Expected: ["The Great Gatsby", "The Hobbit"]
+myLibrary.borrowBook("The Great Gatsby");
+
+// Test Error Handling
+try {
+  console.log(myLibrary.listAvailableBooks());
+  myLibrary.borrowBook("The Hobbit"); // Should throw error
+  myLibrary.returnBook("1984");
+  console.log(myLibrary.listAvailableBooks());
+} catch (e) {
+  if (e instanceof Error) console.log(e.message); // Expected: "Book is already out"
+}
