@@ -24,6 +24,7 @@ const stu2 = new Student(4, "Khaled", "Mohsen school");
 console.log(stu1.id, stu1.name, stu1.school);
 console.log(User.count);
 
+
 class Vehicle {
   private _isRented: boolean = false;
 
@@ -57,7 +58,7 @@ class Truck extends Vehicle {
     super(id, model, price);
   }
 
-  calculatePrice(days: number): number {
+  override calculatePrice(days: number): number {
     return super.calculatePrice(days) + 50;
   }
 }
