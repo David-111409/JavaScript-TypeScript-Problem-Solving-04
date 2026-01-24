@@ -174,3 +174,87 @@ console.log(car.isRented); // Expected: false
 // Ensure the Truck constructor is actually saving the cargoWeight
 // You might need a public getter for cargoWeight to run this test!
 // console.log(heavyTruck.cargoWeight); // Expected: 5000
+
+// enum Size {
+//   Small = "small",
+//   Medium = "medium",
+//   Large = "large",
+// }
+
+// const size: Size = Size.Large; // large
+
+// console.log(size);
+
+// const herSize: Size = Size.Medium;
+
+// if (herSize === Size.Medium) {
+//   console.log("Hello the medium size");
+// }
+
+// const tuple: [number, string] = [1, "hello"];
+
+// console.log(tuple.length /* length = 2 */, tuple[0]);
+
+/*
+EmailNotification
+
+SMSNotification
+
+PushNotification
+*/
+// abstract class Notificat {
+//   abstract send(message: string): string;
+// }
+
+// class EmailNotification extends Notificat {
+//   send(mess: string) {
+//     return "Email sent: " + mess;
+//   }
+// }
+
+// class SMSNotification extends Notificat {
+//   send(mess: string) {
+//     return "SMS sent: " + mess;
+//   }
+// }
+
+// class PushNotification extends Notificat {
+//   send(mess: string) {
+//     return "Push notification sent: " + mess;
+//   }
+// }
+
+// function notifyUser(obj: Notificat, message: string) {
+//   return obj.send(message);
+// }
+
+// // console.log(
+// //   notifyUser(new EmailNotification(), "Hello"),
+// //   notifyUser(new SMSNotification(), "Your code is 1234")
+// // );
+
+// console.log(notifyUser(new PushNotification(), "New message received"));
+
+// const notifications: Notificat[] = [
+//   new EmailNotification(),
+//   new SMSNotification(),
+//   new PushNotification(),
+// ];
+
+// notifications.forEach((n) => console.log(n.send("System update")));
+
+class Person {
+  constructor(public id: number, public name: string, public city: string) {}
+
+  protected drinkCoffee(): void {
+    console.log(this.name + " " + "is now drinking coffee");
+  }
+
+  work(): void {
+    this.drinkCoffee();
+    console.log(this.name + " " + "is now working");
+  }
+}
+
+const person: Person = new Person(2, "Khaled", "Makkah");
+person.work();
