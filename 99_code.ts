@@ -258,3 +258,153 @@ class Person {
 
 const person: Person = new Person(2, "Khaled", "Makkah");
 person.work();
+
+// class User {
+//   [key: string]: string;
+// }
+
+// const user = new User();
+
+// interface User {
+//   [key: string]: string;
+// }
+
+// // const user: { [key: string]: string } = {};
+
+// const user: User = {};
+
+// user.name = "Dawoud";
+// console.log(user.name);
+
+// interface user {
+//   title: string;
+//   register(name: string): string;
+// }
+
+// interface people extends user {
+//   log(name: string): string;
+// }
+
+// class User implements people {
+//   constructor(public title: string) {
+//     this.title = title;
+//   }
+
+//   register(name: string): string {
+//     return "Hello, " + name;
+//   }
+
+//   log(name: string): string {
+//     return name;
+//   }
+// }
+
+// const u1 = new User("Khaled");
+
+// console.log(u1.register("Dawoud"));
+
+type OrderStatus = "completed" | "cancelled";
+
+type OrderItem = {
+  name?: string;
+  price: number;
+  quantity: number;
+  discount?: number; // percentage (0–100)
+};
+
+type Order = {
+  id: number;
+  status: OrderStatus;
+  items: OrderItem[];
+};
+
+const orders: Order[] = [
+  {
+    id: 1,
+    status: "completed",
+    items: [
+      { name: "Laptop", price: 1000, quantity: 1, discount: 10 },
+      { name: "Mouse", price: 50, quantity: 2 },
+    ],
+  },
+  {
+    id: 2,
+    status: "cancelled",
+    items: [{ name: "Keyboard", price: 100, quantity: 1 }],
+  },
+  {
+    id: 3,
+    status: "completed",
+    items: [{ name: "Monitor", price: 300, quantity: 2, discount: 5 }],
+  },
+];
+
+/**
+{
+  totalRevenue: 1570,
+  totalItemsSold: 5,
+  totalDiscount: 170
+}
+ */
+type Summary = {
+  totalRevenue: number;
+  totalItemsSold: number;
+  totalDiscount: number;
+};
+
+enum Status {
+  completed = "completed",
+}
+const generateSummary = (orders: Order[]): Summary => {
+  const obj = { totalRevenue: 0, totalItemsSold: 0, totalDiscount: 0 };
+
+  for (let order of orders) {
+    if (order.status === Status.completed) {
+      for (let item of order.items) {
+        obj.totalRevenue += item.price * item.quantity;
+        if (item.discount) {
+          if (item.discount >= 100 || item.discount < 0) {
+            throw new Error("It is not logic");
+          }
+          obj.totalDiscount +=
+            (item.discount * item.quantity * item.price) / 100;
+        }
+
+        obj.totalItemsSold += item.quantity;
+      }
+    }
+  }
+
+  return { ...obj, totalRevenue: obj.totalRevenue - obj.totalDiscount };
+};
+console.log(generateSummary(orders));
+
+const orders2: Order[] = [
+  {
+    id: 1,
+    status: "completed",
+    items: [{ name: "Book", price: 20, quantity: 2, discount: 0 }],
+  },
+];
+
+console.log(generateSummary(orders2));
+
+console.log(
+  generateSummary([
+    {
+      id: 3,
+      status: "completed",
+      items: [{ price: 100, quantity: 0, discount: 150 }],
+    },
+  ])
+);
+
+console.log(
+  generateSummary([
+    {
+      id: 4,
+      status: "completed",
+      items: [{ price: 100, quantity: 2, discount: 0 }],
+    },
+  ])
+);
