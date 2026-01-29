@@ -148,4 +148,29 @@ const dog: Animal = {
 };
 
 console.log(dog);
+
+// type Negate = (value: number) => number;
+// const negate: Negate = (value) => value * -1;
+
+// const negate = (value: number): number => value * -1;
+// console.log(negate(20));
+
+// let x: unknown;
+// x = "10f";
+// console.log((x as string).length);
+
+// let x: unknown;
+// x = "1002";
+
+// console.log((<string>x).length);
+// x = 20;
+
+// console.log((x as unknown as string).length);
+
+function sum(a: any, b: any) {
+  console.log(((a as number) + b) as number);
+}
+
+sum(2, "3");
+
 */
