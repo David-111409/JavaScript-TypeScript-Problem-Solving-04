@@ -80,3 +80,72 @@ try {
 } catch (e) {
   if (e instanceof Error) console.log(e.message); // Expected: "Book is already out"
 }
+
+/*
+// const ar: readonly number[] = [1, 2, 3];
+// ar.push("hellos");
+// ar.push(4);
+
+// console.log(ar);
+
+// let tuple: readonly [string, number, boolean];
+
+// tuple = ["hello", 2, true];
+// tuple[0] = "dawoud";
+
+// console.log(tuple);
+
+// const ar: [x: number, y: number] = [2, 3];
+
+// // const tup: [number, number] = [2, 3];
+
+// console.log(ar[0], ar[1]);
+
+// const ar: readonly [value: string, setValue: () => void] = ["hello", () => {}];
+
+// console.log(ar);
+
+// const obj: { [key: string]: string } = {};
+
+// obj.name = "Dawoud";
+
+// console.log(obj);
+
+// let tupe: readonly [x: number, y: number];
+
+// tupe = [2, 3];
+// let [x, y] = tupe;
+// tupe[0] = 4;
+// tupe[1] = 5;
+// console.log(tupe, x, y);
+
+// enum CardinalDirections {
+//   North,
+//   East,
+//   South,
+//   West,
+// }
+// let currentDirection: CardinalDirections = CardinalDirections.North;
+// // logs 0
+// console.log(currentDirection);
+// // throws error as 'North' is not a valid enum
+// currentDirection = CardinalDirections.South; // Error: "North" is not assignable to type 'CardinalDirections'.
+
+interface Animal {
+  name: string;
+}
+
+// interface Animals extends Animal {
+//   age: number;
+// }
+interface Animal {
+  age: number;
+}
+
+const dog: Animal = {
+  name: "dog 1",
+  age: 22,
+};
+
+console.log(dog);
+*/
