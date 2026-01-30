@@ -173,4 +173,98 @@ function sum(a: any, b: any) {
 
 sum(2, "3");
 
+// // const ar = [7, 3, 9, -1, 2, 4, -100];
+
+// // // const n = ar.length;
+
+// // // for (let i = 0; i < n - 1; i++) {
+// // //   let s = false;
+// // //   for (let j = 0; j < n - i - 1; j++) {
+// // //     if (ar[j] > ar[j + 1]) {
+// // //       [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
+// // //       s = true;
+// // //     }
+// // //   }
+// // //   if (!s) break;
+// // // }
+
+// // // console.log(ar);
+
+// // // const n = ar.length;
+// // // for (let i = 0; i < n - 1; i++) {
+// // //   let swap = false;
+// // //   for (let j = 0; j < n - i - 1; j++) {
+// // //     if (ar[j] > ar[j + 1]) {
+// // //       [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
+// // //       swap = true;
+// // //     }
+// // //   }
+// // //   if (!swap) break;
+// // // }
+
+// // // console.log(ar);
+
+// // const n = ar.length;
+// // for (let i = 0; i < n - 1; i++) {
+// //   let swap = false;
+// //   for (let j = 0; j < n - i - 1; j++) {
+// //     console.log(ar);
+// //     if (ar[j] > ar[j + 1]) {
+// //       [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
+// //       swap = true;
+// //     }
+// //   }
+// //   if (!swap) break;
+// // }
+
+// // console.log(ar);
+
+// // 5
+// // 70 90 60 85 75
+const ar = [70, 90, 100, 60, 85, 75];
+
+// let n = ar.length;
+// let swap = 0;
+
+// for (let i = 0; i < n - 1; i++) {
+//   let t = false;
+//   console.log(ar);
+//   for (let j = 0; j < n - i - 1; j++) {
+//     if (ar[j] > ar[j + 1]) {
+//       [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
+//       swap++;
+//       t = true;
+//     }
+//   }
+//   if (!t) break;
+// }
+
+// console.log(ar, swap);
+// console.log(ar[0]); // smallest
+// console.log(ar[n - 1]); // largest
+
+function bubbleSort(ar: number[]): { swaps: number; comparisons: number } {
+  let n = ar.length;
+  let swaps = 0;
+  let comparisons = 0;
+
+  for (let i = 0; i < n - 1; i++) {
+    let t = false;
+    for (let j = 0; j < n - i - 1; j++) {
+      comparisons++;
+      if (ar[j] < ar[j + 1]) {
+        [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
+        t = true;
+        swaps++;
+      }
+    }
+    if (!t) break;
+  }
+  return { swaps, comparisons };
+}
+
+console.log(bubbleSort(ar));
+console.log(ar);
+
+// n ** 2 is the number of comparisons
 */
