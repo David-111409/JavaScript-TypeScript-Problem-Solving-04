@@ -75,3 +75,63 @@ const payments: Payment[] = [
 ];
 
 payments.forEach((p) => console.log(processPayment(p, 75)));
+
+/*
+// abstract class Payment {
+//   abstract pay(): void;
+//   constructor(public currency: string) {}
+
+//   noPay(): false {
+//     return false;
+//   }
+// }
+
+// class PaymenWithUSD extends Payment {
+//   constructor(currency: string) {
+//     super(currency);
+//   }
+//   pay(): void {
+//     console.log("pay with " + this.currency);
+//   }
+// }
+
+// class PaymentWithRial extends Payment {
+//   pay(): void {
+//     console.log("Hello, with Rial " + this.currency);
+//   }
+// }
+// const pay = new PaymenWithUSD("dollar and euro");
+// pay.pay();
+// let final = pay.noPay();
+// console.log(final);
+
+// const payWithRiyal = new PaymentWithRial("100 riyal");
+// payWithRiyal.pay();
+
+class SendEmail {
+  constructor(public from: string, public to: string, public subject: string) {}
+
+  send(): void {
+    console.log("The email has been sent successfuly");
+  }
+
+ private validateEmail(): void {
+    if (!this.from.includes("@") || !this.to.includes("@")) {
+      throw new Error("Email is not right");
+    }
+  }
+
+ private validateSubject(): void {
+    if (this.subject.length < 5) throw new Error("The content must be larger");
+  }
+}
+
+const email1 = new SendEmail(
+  "ahmed@gmail.com",
+  "ahmed@gmail.com",
+  "hello, ahmed"
+);
+
+email1.send();
+
+*/
