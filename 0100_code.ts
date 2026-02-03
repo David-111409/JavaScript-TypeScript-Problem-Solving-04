@@ -49,3 +49,19 @@ const admin = new AdminConfig();
 const keys = admin.getKeys();
 console.log(keys);
 // 'keys' should be typed as ('theme' | 'language' | 'notifications' | 'fontSize')[]
+// const obj: { name: string; age: number } = { name: "Dawoud", age: 29 };
+
+// const keys: keyof typeof obj = "name";
+
+interface Book<T> {
+  getTitle(v: T): T;
+}
+
+class book implements Book<string> {
+  getTitle(v = "he") {
+    return v;
+  }
+}
+
+const b = new book();
+console.log(b.getTitle());
