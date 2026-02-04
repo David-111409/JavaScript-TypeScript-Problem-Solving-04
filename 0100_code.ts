@@ -65,3 +65,59 @@ class book implements Book<string> {
 
 const b = new book();
 console.log(b.getTitle());
+
+type User = {
+  id: number;
+  name: string;
+  city: string;
+};
+
+// type readonlyUser<T> = {
+//   readonly [Key in keyof T]: T[Key];
+// };
+
+// type optionalUser<T> = {
+//   [key in keyof T]?: T[key];
+// };
+
+// type Person = {
+//   id: number;
+//   name: string;
+//   message: "hello, world";
+// };
+
+// const user1: optionalUser<Person> = { name: "Hager", message: "hello, world" };
+// console.log(user1.id);
+// user1.id = 3;
+// console.log(user1.id);
+
+// const user1: Omit<User, "id"> = {
+//   //   id: 2,
+//   city: "he",
+//   name: "jkj",
+// };
+
+// const user2: Pick<User, "name"> = {
+//   name: "kjkj"
+// };
+
+// const user3: Optional<User> = {
+//   id: 2,
+// };
+
+// type Optional<T> = {
+//   [key in keyof T]?: T[key];
+// };
+
+type OptionalUser<T> = {
+  [key in keyof T]?: T[key];
+};
+
+type user3 = OptionalUser<User>;
+const user3: Required<user3> = {
+  id: 3,
+  name: "hello",
+  city: "kjkj",
+};
+
+console.log(user3);
