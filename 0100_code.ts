@@ -121,3 +121,29 @@ const user3: Required<user3> = {
 };
 
 console.log(user3);
+
+interface Product<item> {
+  item: item;
+  numberOfPage: number;
+  country: string;
+}
+
+type Book = {
+  name: string;
+  language: string;
+};
+
+const book: Book = {
+  name: "Hello",
+  language: "English",
+};
+
+const product: Product<Book> = {
+  item: book,
+  numberOfPage: 787,
+  country: "UK",
+};
+
+console.log(product.country);
+console.log(product.numberOfPage);
+console.log(product.item);
