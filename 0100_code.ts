@@ -147,3 +147,21 @@ const product: Product<Book> = {
 console.log(product.country);
 console.log(product.numberOfPage);
 console.log(product.item);
+
+
+interface User {
+  name: string;
+  age: number;
+  login: (password: string) => void;
+}
+
+class Person implements User {
+  name = "John";
+  age = 30;
+  login(password: string) {
+    console.log(`User ${this.name} logged in with password ${password}`);
+  }
+}
+
+const person = new Person();
+person.login("myPassword123");
