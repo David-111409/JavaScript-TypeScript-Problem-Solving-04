@@ -408,3 +408,12 @@ console.log(
     },
   ])
 );
+
+const set = new Set("Dawoud");
+const [first, second, ...res] = set;
+// console.log(set);
+console.log(first, second, res);
+set.delete("D");
+set.clear();
+const { size } = set;
+console.log(size);
